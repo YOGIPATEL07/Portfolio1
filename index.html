@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yogi Patel">
+    <title>Yogi Patel - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="bubbles"></div> 
+    <!-- Dark Mode Toggle -->
+    <button id="dark-mode-toggle">
+        <svg id="dark-mode-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#ff9800"></circle>
+        </svg>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <div class="container1">
+            <h1 class="logo">Yogi Patel</h1>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about-me">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<header id="hero">
+    <div class="hero-container">
+        <div class="hero-text">
+            <h1 id="intro-text"></h1>
+            <p>Crafting innovative solutions with code and creativity!</p>
+            <a href="#projects"><button class="cta-button">Explore My Work</button></a>
+        </div>
+        <div class="hero-image">
+            <img src="images/avatar.png" alt="Yogi Patel" />
+        </div>
+    </div>
+</header>
+<div class="section-divider"></div>
+    <!-- About Section -->
+    <section id="about-me" class="container about-container">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Yogi Patel, a passionate developer with expertise in various technologies like Java, JavaScript, C++, and more.<br>
+            I specialize in creating efficient, user-friendly applications that solve real-world problems. 
+        </p>
+        <p>
+            I am currently pursuing a diploma in Computer Programming at Georgian College and actively expanding my skills in Angular, <br>
+            JavaScript frameworks, and modern web development tools.
+        </p>
+        <blockquote>
+            "Passion fuels progress. Let's build the future together."
+        </blockquote>
+    </section>
+    
+    <div class="section-divider"></div>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <!-- C# Skill -->
+            <div class="skill-card">
+                <img src="images/csharp.png" alt="C# Logo">
+                <h3>C#</h3>
+                <p>A programming language ideal for creating software applications and games using the .NET framework.</p>
+            </div>
+    
+            <!-- CSS Skill -->
+            <div class="skill-card">
+                <img src="images/css.png" alt="CSS Logo">
+                <h3>CSS</h3>
+                <p>Defines the style and layout of web pages, including design, colors, and animations.</p>
+            </div>
+    
+            <!-- HTML Skill -->
+            <div class="skill-card">
+                <img src="images/html.png" alt="HTML Logo">
+                <h3>HTML</h3>
+                <p>The foundation for structuring content on the web.</p>
+            </div>
+    
+            <!-- JavaScript Skill -->
+            <div class="skill-card">
+                <img src="images/javascript.png" alt="JavaScript Logo">
+                <h3>JavaScript</h3>
+                <p>Brings interactivity and dynamic behavior to websites.</p>
+            </div>
+    
+            <!-- Python Skill -->
+            <div class="skill-card">
+                <img src="images/python.png" alt="Python Logo">
+                <h3>Python</h3>
+                <p>A versatile language known for simplicity, used in various fields like AI and web development.</p>
+            </div>
+    
+            <!-- SQL Skill -->
+            <div class="skill-card">
+                <img src="images/sql.png" alt="SQL Logo">
+                <h3>SQL</h3>
+                <p>Manages and queries data in relational databases effectively.</p>
+            </div>
+    
+            <!-- ASP.NET Skill -->
+            <div class="skill-card">
+                <img src="images/ASP.NET.png" alt="ASP.NET Logo">
+                <h3>ASP.NET</h3>
+                <p>Facilitates the creation of dynamic and scalable web applications.</p>
+            </div>
+    
+            <!-- Java Skill -->
+            <div class="skill-card">
+                <img src="images/java.png" alt="Java Logo">
+                <h3>Java</h3>
+                <p>A robust language used for building cross-platform applications and Android development.</p>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <!-- POS System -->
+                <div class="project-card">
+                    <img src="images/POS.png" alt="POS System">
+                    <h3>POS System</h3>
+                    <p>A CRUD-based point-of-sale system built using Node.js, Express, and MongoDB. It features user authentication, inventory management, and order processing, designed with real-world business needs in mind.</p>
+                    <a href="https://assignment3-ujm8.onrender.com/"> <button class="project-button" >View Details</button></a>
+                </div>
+    
+                <!-- Movie Search App -->
+                <div class="project-card">
+                    <img src="images/javapokemon.png" alt="Movie Search App">
+                    <h3>Pokedex App</h3>
+                    <p>A java application that integrates the OMDB API to search and display information about Pokemons like a Pokedex a shown in the Anime.</p>
+                   <a href="https://github.com/YOGIPATEL07/ADVJAVAASSIGNMENT2"> <button class="project-button">View Details</button></a>
+                </div>
+    
+                <!-- E-commerce Website -->
+                <div class="project-card">
+                    <img src="images/astudio.png" alt="E-commerce Website">
+                    <h3>Movie Search App</h3>
+                    <p>An android  application that integrates the OMDB API to search and display movie details. It includes features like a search bar, detailed movie pages, and a favorites list, following the MVC architecture for maintainability.But this time made using android studio</p>
+                    <a href="https://github.com/YOGIPATEL07/MOVIE-APP_ANDROID_STUDIO"><button class="project-button">View Details</button></a>
+                </div>
+    
+                <!-- Discord Bot -->
+                <div class="project-card">
+                    <img src="images/chatgpt.png" alt="Discord Bot">
+                    <h3>CHAT-GPT CLONE</h3>
+                    <p>A Clone GPT clone made using Python and Tailwind CSS, capable of real time responses and also stores data for the previous responses  </p>
+                   <a href="https://github.com/YOGIPATEL07/OPENAI"><button class="project-button">View Details</button></a>
+                </div>
+    
+                <!-- Gaming App -->
+                <div class="project-card">
+                    <img src="images/console.png" alt="Gaming App">
+                    <h3>ASP.NET CRUD APPLICATION</h3>
+                    <p>A console-based theme crud application but made with asp.net and uses demo version of stripe</p>
+                    <a href="https://github.com/YOGIPATEL07/ASP.NET"><button class="project-button">View Details</button></a>
+                </div>
+    
+                <!-- Arduino Home Security System -->
+                <div class="project-card">
+                    <img src="images/arduino.png" alt="Arduino Home Security System">
+                    <h3>Arduino Home Security System</h3>
+                   <p>A DIY home security system designed with Arduino, featuring motion detection, alarm triggers, and user notifications. The system showcases integration with IoT devices and real-time monitoring capabilities.</p>
+                   <a href="https://www.tinkercad.com/things/hXRIIej4q0c-project/editel?returnTo=https%3A%2F%2Fwww.tinkercad.com%2Fdashboard"><button class="project-button">View Details</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <div class="section-divider"></div>
+    <!-- Footer -->
+  
+    <footer>
+      <div class="home-sci">
+        <a href="https://www.linkedin.com/in/yogi-patel-74ab06248/"><i class="bx bxl-linkedin"></i></a>
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/yogi_patel2870/?next=%2F&hl=en"><i class="bx bxl-instagram-alt"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        
+       
+
+      </div>
+    </footer>
+</body>
+</html>
