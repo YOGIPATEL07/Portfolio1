@@ -18,6 +18,8 @@ const PORT = 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("public"));
+
 
 app.post("/send", async (req, res) => {
     const { name, email, message } = req.body;
