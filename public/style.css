@@ -150,41 +150,132 @@ header p {
 }
 
 /* Hero Section */
+/* Hero Section for Larger Screens */
 .hero-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left;
-    gap: 2rem;
+    text-align: center;
+    gap: 1rem;
     padding: 4rem 2rem;
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
 }
 
 .hero-text {
     max-width: 50%;
+    flex: 1; /* Ensures responsiveness */
 }
 
 .hero-text h1 {
+    text-align: center;
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #ff9800;
 }
 
 .hero-text p {
+    text-align: center;
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #eee; /* Softer color for readability */
+}
+
+.hero-image {
+    flex: 1; /* Ensures the image takes equal space as text */
+    text-align: center; /* Centers the image */
 }
 
 .hero-image img {
     width: 300px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 10%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out;
+    animation: float 6s infinite ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .hero-image img:hover {
     transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.8); /* Adds a glowing effect */
 }
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves the image up slightly */
+    }
+}
+
+/* Adjustments for Medium Screens (Tablets) */
+@media (max-width: 1024px) {
+    .hero-container {
+        padding: 3rem 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .hero-text {
+        max-width: 100%; /* Text spans full width */
+        text-align: center; /* Centers text for better appearance */
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Slightly smaller heading */
+    }
+
+    .hero-text p {
+        font-size: 1.1rem; /* Adjusts text size for readability */
+    }
+
+    .hero-image img {
+        width: 250px; /* Slightly smaller image */
+    }
+}
+
+/* Adjustments for Small Screens (Mobile) */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column; /* Stacks text and image vertically */
+        text-align: center; /* Centers everything */
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem; /* Smaller heading for mobiles */
+    }
+
+    .hero-text p {
+        font-size: 1rem; /* Adjusted paragraph font size */
+    }
+
+    .hero-image img {
+        width: 200px; /* Smaller image for mobiles */
+    }
+}
+
+/* Fine-Tuned for Extra Small Screens (Below 480px) */
+@media (max-width: 480px) {
+    .hero-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem; /* Further reduce heading size */
+    }
+
+    .hero-text p {
+        font-size: 0.9rem; /* Smaller text for readability */
+    }
+
+    .hero-image img {
+        width: 180px; /* Even smaller image */
+    }
+}
+
 
 /* Section Styles */
 section {
@@ -285,15 +376,63 @@ h2 {
 }
 
 /* Responsive Skills Grid */
+/* Responsive Skills Grid */
+@media (max-width: 1024px) {
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .skills-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 1.5rem;
     }
 
     .skill-card {
-        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .skill-card img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-container {
+        display: grid;
+                width: 85%;
+                grid-template-columns: 0fr;
+                gap: 1rem;
+    }
+
+    .skill-card {
+        padding: 1rem;
+    }
+
+    .skill-card img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill-card p {
+        font-size: 0.8rem;
     }
 }
 
@@ -540,10 +679,20 @@ footer p {
     z-index: 1000;
 }
 
+#navbar .container1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+}
+
 #navbar .nav-links {
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 #navbar .nav-links li {
@@ -583,6 +732,62 @@ footer p {
 #dark-mode-toggle:hover svg {
     transform: scale(1.1);
 }
+
+/* Responsive Design */
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+#menu-toggle .hamburger::before,
+#menu-toggle .hamburger::after {
+    content: '';
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+}
+
+#menu-toggle .hamburger::before {
+    top: -8px;
+}
+
+#menu-toggle .hamburger::after {
+    top: 8px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: none;
+    }
+
+    #navbar .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    #navbar .nav-links.active {
+        display: flex;
+    }
+
+    #navbar .nav-links a {
+        text-align: center;
+        padding: 1rem 0;
+        width: 100%;
+    }
+}
+
 #contact{
     background: linear-gradient(to bottom right, #2c3e50, #1c1c3c);
 }

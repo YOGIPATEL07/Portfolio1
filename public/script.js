@@ -7,6 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
         loop: true
     });
 
+    const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+
     // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
@@ -22,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
     darkModeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
+
+    
 
     // Scroll-to-Top Button
     const scrollToTopBtn = document.createElement("button");
@@ -66,45 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.transform = "scale(1)";
         });
     });
-
-    // Project Card Modal View
-    // const projectCards = document.querySelectorAll(".project-card");
-    // projectCards.forEach(card => {
-    //     card.addEventListener("click", () => {
-    //         const modal = document.createElement("div");
-    //         modal.className = "modal";
-    //         modal.style.position = "fixed";
-    //         modal.style.top = "0";
-    //         modal.style.left = "0";
-    //         modal.style.width = "100%";
-    //         modal.style.height = "100%";
-    //         modal.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-    //         modal.style.display = "flex";
-    //         modal.style.justifyContent = "center";
-    //         modal.style.alignItems = "center";
-    //         modal.style.color = "#fff";
-    //         modal.style.padding = "2rem";
-
-    //         const modalContent = document.createElement("div");
-    //         modalContent.style.backgroundColor = "#1c1c3c";
-    //         modalContent.style.padding = "2rem";
-    //         modalContent.style.borderRadius = "12px";
-    //         modalContent.style.textAlign = "center";
-
-    //         modalContent.innerHTML = `
-    //             <h2>${card.querySelector("h3").textContent}</h2>
-    //             <p>${card.querySelector("p").textContent}</p>
-    //             <button id="close-modal" style="margin-top: 1rem; padding: 10px 20px; background: #ff9800; border: none; color: #fff; border-radius: 8px; cursor: pointer;">Close</button>
-    //         `;
-
-    //         modal.appendChild(modalContent);
-    //         document.body.appendChild(modal);
-
-    //         document.getElementById("close-modal").addEventListener("click", () => {
-    //             modal.remove();
-    //         });
-    //     });
-    // });
 
     // Dynamic Footer Year
     const footerYear = document.querySelector("footer p");
