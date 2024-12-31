@@ -163,30 +163,30 @@ document.addEventListener("DOMContentLoaded", () => {
     createBubblesMultipleTimes(4); // Change the number here (2 or 3) based on your needs
 
        // Contact Form Submission
-       document.querySelector("#contact-form").addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
+ 
+document.querySelector("#contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
 
-        try {
-            const response = await fetch("http://localhost:5000/send", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
+    try {
+        const response = await fetch("http://localhost:10000/send", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+        });
 
-            const result = await response.json();
-            if (result.success) {
-                alert("Message sent successfully!Please wait for the response");
-                e.target.reset();
-            } else {
-                alert("Failed to send message. Please try again.");
-            }
-        } catch (error) {
-            console.error("Error:", error);
-            alert("An error occurred. Please try again later.");
+        const result = await response.json();
+        if (result.success) {
+            alert("Message sent successfully!Please wait for the response");
+            e.target.reset();
+        } else {
+            alert("Failed to send message. Please try again.");
         }
-    });
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again later.");
+    }
 });
-
+});
 
