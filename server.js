@@ -27,11 +27,13 @@ app.post("/send", async (req, res) => {
     });
 
     const mailOptions = {
-        from: email,
+        from: `"${name}" <${process.env.EMAIL_USER}>`, // Display your email, but include the sender's name
         to: "yogipatel2870@gmail.com",
+        replyTo: email, // This sets the reply-to email address to the sender's email
         subject: `New Message from ${name}`,
         text: message,
     };
+    
 
     try {
         await transporter.sendMail(mailOptions);
