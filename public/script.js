@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Typed.js Animation
     const introText = new Typed("#intro-text", {
-        strings: ["Hi, I'm Yogi Patel.", "A Developer.", "A Programmer.", "A Coder."],
+        strings: ["Hi, I'm Yogi Patel.", "A Developer.", "IT Technician.", "A Coder."],
         typeSpeed: 50,
         backSpeed: 30,
         loop: true
